@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
 
 const ClaimsPage: React.FC = () => {
   const router = useRouter();
@@ -14,7 +13,6 @@ const ClaimsPage: React.FC = () => {
   );
 
   return (
-    <Layout>
       <div>
         {/* Tab Bar */}
         <div className="tab-bar">
@@ -72,7 +70,6 @@ const ClaimsPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </Layout>
   );
 };
 
