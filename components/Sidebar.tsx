@@ -44,8 +44,9 @@ const items: LinkGroupSchema[] = [
 ]
 
 const SidebarItem: React.FC<{link: LinkSchema, activePath: string | null}> = ({link, activePath}) => (
-    <Link href={link.link} className={clsx(`hover:bg-blue-200 transition cursor-pointer rounded-lg p-3 m-1 mr-6 block`, {
-    'bg-blue-400 text-white': activePath?.startsWith(link.link)
+    <Link href={link.link} className={clsx(` transition cursor-pointer rounded-lg p-3 m-1 mr-6 block`, {
+    'bg-blue-400 text-white': activePath?.startsWith(link.link),
+    'hover:bg-blue-200': !activePath?.startsWith(link.link)
   })}>{link.name}</Link>
 )
 
