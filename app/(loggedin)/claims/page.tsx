@@ -27,8 +27,8 @@ const Page: React.FC = () => {
           <tr key={claim.id} className='hover:bg-gray-50 cursor-pointer' onClick={() => router.push(`/claims/${claim.id}`)}>
             <td className='p-2'>{claim.title}</td>
             <td className='p-2'>{claim.assignee}</td>
-            <td className='p-2'>{claim.description}</td>
             <td className='p-2'>{claim.age}</td>
+            <td className='p-2'>{claim.description}</td>
           </tr>
         ))}
       </tbody>
