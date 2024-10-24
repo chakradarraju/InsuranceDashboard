@@ -43,8 +43,8 @@ const items: LinkGroupSchema[] = [
   }
 ]
 
-const SidebarItem: React.FC<{idx: number, link: LinkSchema, activePath: string | null}> = ({idx, link, activePath}) => (
-    <Link href={link.link}  key={idx} className={clsx(`hover:bg-blue-200 transition cursor-pointer rounded-lg p-3 m-1 mr-6 block`, {
+const SidebarItem: React.FC<{link: LinkSchema, activePath: string | null}> = ({link, activePath}) => (
+    <Link href={link.link} className={clsx(`hover:bg-blue-200 transition cursor-pointer rounded-lg p-3 m-1 mr-6 block`, {
     'bg-blue-400 text-white': activePath?.startsWith(link.link)
   })}>{link.name}</Link>
 )
@@ -55,10 +55,10 @@ const Sidebar: React.FC = () => {
   return (<div className="w-1/6 w-min-4 p-1 ">
     <div className="mb-1 sidebarSection">
       {items.map((group, idx) => {
-        return (<div key={idx}>
+        return (<div key={idx} className='p-1'>
           {group.groupName && <div className='border-gray-400 font-bold'>{group.groupName}</div>}
-          {group.items.map((item, idx) => <SidebarItem idx={idx} link={item} activePath={pathname} />)}
-        </div>)
+          {group.items.map((item, idx) => <SidebarItem key={idx} link={item} activePath={pathname} />)}
+        </div>);
       })}
     </div>
   </div>);
