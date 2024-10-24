@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+
 export default function Home() {
-  return "Hello world 2";
+  redirect('/claims/');
 }
