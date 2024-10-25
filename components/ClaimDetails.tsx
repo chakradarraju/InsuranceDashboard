@@ -69,7 +69,7 @@ const ClaimDetails: React.FC<{claim: UIClaim}> = ({claim}) => {
             </GridItem>
             <GridItem>
               <div className='text-sm text-gray-500'>Tags</div>
-              <div>{claim.tags?.map(t => <Badge variant="solid" className='m-1'>{t}</Badge>)}</div>
+              <div>{claim.tags?.map((t, idx) => <Badge key={idx} variant="solid" className='m-1'>{t}</Badge>)}</div>
             </GridItem>
             <GridItem>
               <div className='text-sm text-gray-500'>Address</div>
@@ -77,7 +77,7 @@ const ClaimDetails: React.FC<{claim: UIClaim}> = ({claim}) => {
             </GridItem>
             <GridItem>
               <div className='text-sm text-gray-500'>Reports</div>
-              {claim.reports?.map(r => <div>{r.approved ? '✓' : 'X'} {r.name}</div>)}
+              {claim.reports?.map((r, idx) => <div key={idx}>{r.approved ? '✓' : 'X'} {r.name}</div>)}
             </GridItem>
             <GridItem colSpan={2}>
               <div className='text-sm text-gray-500'>Previous claims</div>
