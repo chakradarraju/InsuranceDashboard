@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { UIClaim } from '@/schema/Claim';
+import { Table } from '@chakra-ui/react';
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
 
@@ -14,30 +15,30 @@ const ClaimsTable: React.FC<{claims: UIClaim[]}> = ({claims}) => {
   const router = useRouter();
 
   return (<div className='p-5'>
-    <table className="w-full border dark:border-gray-400">
-      <thead>
-        <tr>
-          <th className='p-1'>Claim type</th>
-          <th className='p-1'>Assignee</th>
-          <th className='p-1'>Claim value</th>
-          <th className='p-1'>Age of claim (days)</th>
-          <th className='p-1'>Description</th>
-          <th className='p-1'>Number of comments</th>
-        </tr>
-      </thead>      
-      <tbody>
-        {claims.map((claim) => (
-          <tr key={claim._id} className='hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer' onClick={() => router.push(`/claims/${claim._id}`)}>
-            <td className='p-2'>{claim.type}</td>
-            <td className='p-2'>{claim.handlerName}</td>
-            <td className='p-2'>{claim.valueCurrencySymbol} {claim.value}</td>
-            <td className='p-2'>{ageOfClaim(claim)}</td>
-            <td className='p-2'>{claim.description}</td>
-            <td className='p-2'>{claim.comments?.length || 0}</td>
-          </tr>
+    <Table.Root variant="line" striped className='w-full' interactive>
+      <Table.Header>
+        <Table.Row>
+          <Table.ColumnHeader>Claim type</Table.ColumnHeader>
+          <Table.ColumnHeader>Assignee</Table.ColumnHeader>
+          <Table.ColumnHeader>Claim value</Table.ColumnHeader>
+          <Table.ColumnHeader>Age of claim (days)</Table.ColumnHeader>
+          <Table.ColumnHeader>Description</Table.ColumnHeader>
+          <Table.ColumnHeader>Number of comments</Table.ColumnHeader>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+      {claims.map((claim) => (
+          <Table.Row key={claim._id} className='cursor-pointer' onClick={() => router.push(`/claims/${claim._id}`)}>
+            <Table.Cell className='p-2'>{claim.type}</Table.Cell>
+            <Table.Cell className='p-2'>{claim.handlerName}</Table.Cell>
+            <Table.Cell className='p-2'>{claim.valueCurrencySymbol} {claim.value}</Table.Cell>
+            <Table.Cell className='p-2'>{ageOfClaim(claim)}</Table.Cell>
+            <Table.Cell className='p-2'>{claim.description}</Table.Cell>
+            <Table.Cell className='p-2'>{claim.comments?.length || 0}</Table.Cell>
+          </Table.Row>
         ))}
-      </tbody>
-    </table>
+      </Table.Body>
+    </Table.Root>
   </div>)
 }
 
