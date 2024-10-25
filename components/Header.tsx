@@ -10,7 +10,6 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@/components/ui/menu"
-import { Button } from "@chakra-ui/react";
 
 const Header: React.FC = () => {
   const { data: session, status } = useSession();
