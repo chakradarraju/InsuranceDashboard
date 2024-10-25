@@ -11,8 +11,8 @@ const Page: React.FC = () => {
     console.log('Logged in, redirecting to home');
     redirect('/');
   }
-  return (<div className='h-full m-auto bg-slate-100 dark:bg-slate-900'>
-    <div className='flex flex-col p-10 text-center items-center shadow-lg w-1/4 m-auto bg-white dark:bg-black'>
+  return (<div className='h-full m-auto bg-slate-100 dark:bg-slate-900 pt-20'>
+    <div className='flex flex-col p-10 text-center items-center shadow-lg w-1/4 min-w-96 m-auto bg-white dark:bg-black'>
       <Image src="/DashStack.webp" alt="Logo" width={300} height={300} />
       <h1 className='text-2xl font-black m-6'>Welcome to DashStack</h1>
       <GoogleButton className='m-4' onClick={() => signIn('google')} />

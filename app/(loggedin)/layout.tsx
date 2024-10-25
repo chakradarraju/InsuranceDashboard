@@ -2,7 +2,7 @@ import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="flex container h-full bg-white dark:bg-black flex-col mx-auto divide-y">
+  <div className="flex w-full h-full bg-white dark:bg-black flex-col divide-y">
     <Header />
     <div className="flex flex-row flex-grow">
       <Sidebar />
