@@ -5,6 +5,7 @@ module.exports = {
       center: true,
     },
   },
+  darkMode: ["selector", ".dark"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
