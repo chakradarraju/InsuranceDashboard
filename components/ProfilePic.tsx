@@ -1,5 +1,5 @@
 import Image from "next/image";
 
-const ProfilePic: React.FC<{src: string}> = ({src}) => (<Image alt="profile pic" height={20} width={20} src={src} className="w-10 h-10 rounded-full" />);
+const ProfilePic: React.FC<{src: string}> = ({src, ...props}) => (<Image alt="profile pic" height={40} width={40} src={src} className="rounded-full" {...props} />);
 
 export default ProfilePic;

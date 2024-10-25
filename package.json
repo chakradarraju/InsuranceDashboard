@@ -9,18 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^3.7.2",
     "@chakra-ui/react": "^3.0.0",
     "@emotion/react": "^11.13.3",
     "bson": "^6.9.0",
     "clsx": "^2.1.1",
     "mongodb": "^6.10.0",
     "next": "^15.0.1",
+    "next-auth": "5.0.0-beta.25",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "18.3.1",
     "react-icons": "^5.3.0"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^3.0.0",
     "@types/node": "^20.11.6",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",

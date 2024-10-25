@@ -30,6 +30,8 @@ if (process.env.NODE_ENV === "development") {
   client = new MongoClient(uri, options);
 }
 
+export default client;
+
 // Export a module-scoped MongoClient. By doing this in a
 // separate module, the client can be shared across functions.
 export async function getDb(): Promise<Db> {
