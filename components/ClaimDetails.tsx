@@ -65,7 +65,7 @@ const ClaimDetails: React.FC<{claim: UIClaim}> = ({claim}) => {
             </GridItem>
             <GridItem colSpan={2} className='flex-col'>
               <div className='text-sm text-gray-500'>Comments</div>
-              <div>{displayComments(claim.comments)}</div>
+              <div className='whitespace-pre-wrap'>{displayComments(claim.comments)}</div>
             </GridItem>
             <GridItem>
               <div className='text-sm text-gray-500'>Tags</div>
