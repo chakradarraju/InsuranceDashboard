@@ -10,6 +10,7 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@/components/ui/menu"
+import { Input, Separator, Stack } from "@chakra-ui/react";
 
 const Header: React.FC = () => {
   const { data: session, status } = useSession();
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
   }
   return (<div className="flex text-center h-16">
     <div className="text-2xl font-bold p-4">DashStack</div>
-    <input type="text" placeholder="Search..." className="flex flex-1 p-1 border-gray-300 border-2 rounded-md mx-5 my-2 " />
+    <Input variant="subtle" placeholder="Search..." className="flex-1 my-auto m-10 p-1"></Input>
     <div className="my-auto mx-2">
       <ColorModeButton />
     </div>
@@ -29,7 +30,11 @@ const Header: React.FC = () => {
           <ProfilePic src="/user.png" />
         </MenuTrigger>
         <MenuContent>
-          <MenuItem value="signOut" onClick={() => signOut()}>Logout</MenuItem>
+          <Stack>
+            <MenuItem value="user" disabled>Welcome {session?.user?.name}</MenuItem>
+            <Separator variant="solid" />
+            <MenuItem value="signOut" onClick={() => signOut()}>Logout</MenuItem>
+          </Stack>
         </MenuContent>
       </MenuRoot>
     </div>

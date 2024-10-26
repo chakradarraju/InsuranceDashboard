@@ -5,6 +5,9 @@ module.exports = {
       center: true,
     },
   },
+  corePlugins: {
+    preflight: false,
+  },
   darkMode: ["selector", ".dark"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",

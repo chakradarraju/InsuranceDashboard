@@ -1,5 +1,5 @@
-import '@/styles/globals.css';
 import { Provider } from "@/components/ui/provider"
+import '@/styles/globals.css';
 import { inter } from './ui/fonts';
 import { SessionProvider } from 'next-auth/react';
 

@@ -38,12 +38,3 @@ export async function getDb(): Promise<Db> {
   const dbClient = await client;
   return dbClient.db(dbMap.get(process.env.ENV ?? 'dev') ?? defaultDb);
 }
-
-export function makeDocPlain(doc: Document): object {
-  const serializedDoc = EJSON.serialize(doc);
-  return EJSON.deserialize(serializedDoc);
-}
-
-export function makeDocsPlain(docs: Document[]): object[] {
-  return docs.map(makeDocPlain);
-}

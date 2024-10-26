@@ -3,7 +3,8 @@
 import ProfilePic from '@/components/ProfilePic';
 import { UIClaim } from '@/schema/Claim';
 import ClaimDetailsStageProgress from './ClaimDetailsStageProgress';
-import { Badge, Grid, GridItem, Tabs } from "@chakra-ui/react";
+import { Badge, Grid, GridItem, Tabs, Textarea } from "@chakra-ui/react";
+import { Button } from './ui/button';
 
 const tabs = ["Claim", "Policy", "Customer", "Appraisals", "Litigation", "Fraud", "Leakages", "Network"];
 
@@ -28,8 +29,10 @@ const ClaimDetails: React.FC<{claim: UIClaim}> = ({claim}) => {
       </div>
       <ClaimDetailsStageProgress stageProgress={claim.stageProgress} className="flex flex-1 p-5" />
       <div className='flex flex-col w-1/5'>
-        Add note
-        <textarea className='mt-2 p-1 flex-1'/>
+        <div>
+          Add comment <Button className='float-right'>Add</Button>
+        </div>
+        <Textarea variant="subtle" className='mt-2 p-1 flex-1 border-gray-500 border-1'/>
       </div>
     </div>
     <div className='flex'>
