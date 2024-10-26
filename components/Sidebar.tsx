@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { Separator } from '@chakra-ui/react';
 
 interface LinkSchema {
   name: string,
@@ -59,6 +60,7 @@ const Sidebar: React.FC = () => {
         return (<div key={idx} className='p-1'>
           {group.groupName && <div className='border-gray-400 dark:border-gray-200 font-bold'>{group.groupName}</div>}
           {group.items.map((item, idx) => <SidebarItem key={idx} link={item} activePath={pathname} />)}
+          <Separator />
         </div>);
       })}
     </div>
