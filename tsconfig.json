@@ -28,9 +28,6 @@
     ],
     "strictNullChecks": true
   },
-  "corePlugins": {
-    "preflight": false,
-  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
